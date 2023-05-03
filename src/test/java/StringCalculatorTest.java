@@ -28,4 +28,8 @@ public class StringCalculatorTest {
         Assertions.assertEquals(3, calculator.add("1\n2"));
         Assertions.assertEquals(4, calculator.add("1\n2,1"));
     }
+    @Test
+    public void testDifferentDelimiterSupport(){
+        Assertions.assertEquals(3, calculator.add("//;\n1;2"));
+    }
 }
