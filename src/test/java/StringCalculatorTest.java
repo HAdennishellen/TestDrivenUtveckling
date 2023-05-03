@@ -12,7 +12,15 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testEmptyStringReturnsZero() {
+    public void testEmptyString() {
         Assertions.assertEquals(0, calculator.add(""));
+    }
+    @Test
+    public void testUnknownAmountOfNumbers() {
+        Assertions.assertEquals(1, calculator.add("1"));
+        Assertions.assertEquals(2, calculator.add("2"));
+        Assertions.assertEquals(3, calculator.add("1,2"));
+        Assertions.assertEquals(5, calculator.add("1,2,2"));
+        Assertions.assertEquals(6, calculator.add("1,2,1,2"));
     }
 }
