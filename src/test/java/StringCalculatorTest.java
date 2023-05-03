@@ -23,4 +23,9 @@ public class StringCalculatorTest {
         Assertions.assertEquals(5, calculator.add("1,2,2"));
         Assertions.assertEquals(6, calculator.add("1,2,1,2"));
     }
+    @Test
+    public void testLineBreaker(){
+        Assertions.assertEquals(3, calculator.add("1\n2"));
+        Assertions.assertEquals(4, calculator.add("1\n2,1"));
+    }
 }

@@ -9,7 +9,7 @@ public class StringCalculatorImpl implements StringCalculator {
             return 0;
         }
         else{
-            String[] numArray = input.split(",");
+            String[] numArray = input.split("[,\n]");
             int sum = 0;
             for (String num : numArray) {
                 sum += Integer.parseInt(num);
