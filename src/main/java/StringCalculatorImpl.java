@@ -1,10 +1,10 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StringCalculatorImpl implements StringCalculator {
 
     @Override
     public int add(String input) {
-        //TODO implement
         int sum = 0;
         if(input.isEmpty()){
             return 0;
@@ -16,20 +16,27 @@ public class StringCalculatorImpl implements StringCalculator {
                 delimiter = input.substring(2, delimiterIndex);
                 input = input.substring(delimiterIndex+1);
             }
-            String[] numArray = input.split("[,\n"+delimiter+"]");
-            for (String num : numArray) {
-                if(!num.isEmpty()){
-                    sum += Integer.parseInt(num);
+            String[] inputArray = input.split("[,\n"+delimiter+"]");
+            List<Integer> negativeInputs = new ArrayList<>();
+            for (String inputString : inputArray) {
+                if(!input.isEmpty()){
+                    int nInput = Integer.parseInt(inputString);
+                    if(nInput < 0){
+                        negativeInputs.add(nInput);
+                    }
+                    else {
+                        sum += nInput;
+                    }
                 }
+            }
+            if(!negativeInputs.isEmpty()){
+                StringBuilder message = new StringBuilder("Negative inputs not allowed:" + negativeInputs.get(0));
+                for(int i = 1; i < negativeInputs.size();i++){
+                    message.append(", ").append(negativeInputs.get(i));
+                }
+                throw new IllegalArgumentException(message.toString());
             }
             return sum;
         }
-
-//        String[] delimiters = {",", "\n", ";"};
-//        if(input.startsWith("//")){
-//            int delimiterIndex = input.indexOf('\n');
-//            String delimiter = input.substring(2, )
-//        }
-
     }
 }

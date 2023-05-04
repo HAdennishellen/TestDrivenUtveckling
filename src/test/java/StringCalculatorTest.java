@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 public class StringCalculatorTest {
 
     private StringCalculator calculator;
@@ -31,5 +33,16 @@ public class StringCalculatorTest {
     @Test
     public void testDifferentDelimiterSupport(){
         Assertions.assertEquals(3, calculator.add("//;\n1;2"));
+    }
+    @Test
+    public void testNegativeInputException(){
+        try{
+            calculator.add("-1,-2,2");
+            fail("Exception expected");
+
+        }catch(IllegalArgumentException ignored){
+
+        }
+
     }
 }
