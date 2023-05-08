@@ -1,6 +1,6 @@
 
 # StringCalculator
-[<img src="[https://img.shields.io/badge/LABEL-MESSAGE-COLOR.svg?logo=LOGO](https://codebuild.eu-north-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZFQ5YUlSQUkrSDRGQmlHZlc2N1FUd1ZPZE9yM3ZiSlRFdVFhQ1Q4UG5FOFdnSTBlL2xxUXNwdzl1WGZIb2dFaHZRdnppMmd6SFZobVdyN1hVM2J5TDJ3PSIsIml2UGFyYW1ldGVyU3BlYyI6ImpUVThkV2V2ZGFQcTZXTTgiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)">](<LINK>)
+<img src="[https://img.shields.io/badge/LABEL-MESSAGE-COLOR.svg?logo=LOGO](https://codebuild.eu-north-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZFQ5YUlSQUkrSDRGQmlHZlc2N1FUd1ZPZE9yM3ZiSlRFdVFhQ1Q4UG5FOFdnSTBlL2xxUXNwdzl1WGZIb2dFaHZRdnppMmd6SFZobVdyN1hVM2J5TDJ3PSIsIml2UGFyYW1ldGVyU3BlYyI6ImpUVThkV2V2ZGFQcTZXTTgiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)">
 ## Prerequisites
 - jdk 17+
 
