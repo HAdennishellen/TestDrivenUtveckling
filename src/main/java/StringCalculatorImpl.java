@@ -1,8 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Scanner;
+
 
 public class StringCalculatorImpl implements StringCalculator {
-
+    Logger logger;
+    public StringCalculatorImpl(Logger logger){
+       this.logger = logger;
+    }
     @Override
     public int add(String input) {
         int sum = 0;
@@ -23,8 +29,9 @@ public class StringCalculatorImpl implements StringCalculator {
                     int nInput = Integer.parseInt(inputString);
                     if(nInput < 0){
                         negativeInputs.add(nInput);
-                    }
-                    else {
+                    }else if(nInput <999){
+                        logger.log(nInput);
+                    } else {
                         sum += nInput;
                     }
                 }
@@ -39,4 +46,6 @@ public class StringCalculatorImpl implements StringCalculator {
             return sum;
         }
     }
+
+
 }

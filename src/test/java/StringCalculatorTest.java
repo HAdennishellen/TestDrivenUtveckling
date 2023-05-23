@@ -2,6 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class StringCalculatorTest {
@@ -45,4 +49,15 @@ public class StringCalculatorTest {
         }
 
     }
+    @Test
+    public void TestCalculatorPrintsToStream(){
+        InputStream inputStream = new ByteArrayInputStream("1,2\n".getBytes());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        Main main = new Main(inputStream, outputStream);
+        main.main();
+
+        Assertions.assertEquals("3\n", outputStream.toString());
+    }
+
 }
