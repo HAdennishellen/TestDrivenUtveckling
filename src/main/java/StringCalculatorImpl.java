@@ -16,7 +16,7 @@ public class StringCalculatorImpl implements StringCalculator {
             return 0;
         }
         else{
-            String delimiter = ",";
+            String delimiter = ";";
             if(input.startsWith("//")){
                 int delimiterIndex = input.indexOf("\n");
                 delimiter = input.substring(2, delimiterIndex);
@@ -29,11 +29,10 @@ public class StringCalculatorImpl implements StringCalculator {
                     int nInput = Integer.parseInt(inputString);
                     if(nInput < 0){
                         negativeInputs.add(nInput);
-                    }else if(nInput <999){
+                    }else if(nInput > 999) {
                         logger.log(nInput);
-                    } else {
-                        sum += nInput;
                     }
+                    sum += nInput;
                 }
             }
             if(!negativeInputs.isEmpty()){

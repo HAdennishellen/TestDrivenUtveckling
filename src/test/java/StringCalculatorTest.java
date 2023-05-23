@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -14,7 +15,7 @@ public class StringCalculatorTest {
 
     @BeforeEach
     public void beforeEach() {
-        calculator = new StringCalculatorImpl();
+        calculator = new StringCalculatorImpl(new loggerImpl());
     }
 
     @Test
@@ -50,14 +51,21 @@ public class StringCalculatorTest {
 
     }
     @Test
+    public void TestCalculatorAbove1000(){
+        Logger log = Mockito.mock(Logger.class);
+        StringCalculatorImpl stringCalculator = new StringCalculatorImpl(log);
+        Assertions.assertEquals(1002, stringCalculator.add("1000,2\n"));
+        Mockito.verify(log).log(1000);
+    }
+    @Test
     public void TestCalculatorPrintsToStream(){
         InputStream inputStream = new ByteArrayInputStream("1,2\n".getBytes());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
         Main main = new Main(inputStream, outputStream);
-        main.main();
+        main.run();
 
-        Assertions.assertEquals("3\n", outputStream.toString());
+        Assertions.assertEquals("The result is 3\r\n", outputStream.toString());
     }
 
 }
